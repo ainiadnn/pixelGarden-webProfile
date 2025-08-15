@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom animation */
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .show {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fadein-delay {
+    @apply opacity-0;
+    animation: fadein 2s ease-out 1 forwards;
+    animation-delay: 2s;
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+   .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+  }
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+  .flip-front,
+  .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem; /* agar tetap rounded */
+    padding: 1rem;
+    inset: 0;
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+    background-color: #dce2bb;
+    color: #1a1a1a;
+  }
+
+  .dark .flip-back {
+    background-color: #444;
+    color: white;
+    
+  }
+
+    .flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front {
+  background-color: white;
+  color: #1a1a1a;
+    z-index: 2;
+  transform: rotateY(0deg);
+
+}
+
+.dark .flip-front {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+}
+

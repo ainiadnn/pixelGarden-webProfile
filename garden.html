@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixel Garden</title>
+   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+<script defer src="./js/garden.js"></script>
+  <link rel="stylesheet" href="./style/output.css" />
+</head>
+<body class="bg-softCream text-darkSoil dark:bg-darkSoil dark:text-softCream font-pixel min-h-screen flex flex-col items-center justify-center text-center p-6">
+  <a href="index.html"><button class="bg-gardenPink text-darkSoil px-4 py-2 rounded shadow hover:bg-gardenGreen transition hover:scale-105">back to home</button>
+ </a>
+ <br>
+   <h1 class="text-3xl font-bold text-gardenPink mb-4">🌻 Pixel Garden</h1>
+
+  <br />
+
+  <p class="text-green-600" id="needsInfo">Needs 3 water and 2 sunlight to grow</p>
+
+  <div id="plantContainer" class="mb-6">
+    <img id="plantImage" src="./assets/images/sprout.png" alt="Plant Stage" class="w-[100px] mx-auto transition hover:scale-105 animate-pulse" />
+    <p class="mt-2 text-green-800">Stage: <span id="plantStage">Sprout</span></p>
+  </div>
+
+  <div class="space-x-4">
+    <button
+      id="btnWater"
+      class="bg-gardenPink text-darkSoil px-4 py-2 rounded shadow hover:bg-gardenGreen transition hover:scale-105"
+    >
+      💧 Water
+    </button>
+    <button
+      id="btnSunlight"
+      class="bg-gardenPink text-darkSoil px-4 py-2 rounded shadow hover:bg-gardenGreen transition hover:scale-105"
+    >
+      ☀️ Sunlight
+    </button>
+  </div>
+
+  <br />
+
+  <p class="mt-4 text-green-700">
+    Water: <span id="waterCount">5</span> | Sunlight: <span id="sunCount">3</span>
+  </p>
+  
+  <p class="mt-1 text-sm text-gray-600">
+    💧 Water refill in: <span id="waterTimer">2:00</span> |
+    ☀️ Sunlight refill in: <span id="sunTimer">1:00</span>
+  </p>
+
+  <p class="mt-6 text-sm text-gray-600">
+    Interact every 5-10 minutes to grow your plant 🌱
+  </p>
+
+</body>
+</html>

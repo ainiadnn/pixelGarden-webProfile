@@ -1,0 +1,17 @@
+{
+  "name": "pixelgarden",
+  "version": "1.0.0",
+  "description": "This is a pixel-art themed, interactive timeline portfolio.  \r It uses Tailwind CSS + JS with scroll animations, dark mode, and retro design.",
+  "main": "index.js",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "watch": "tailwindcss -i ./style/tailwind.css -o ./style/output.css --watch"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

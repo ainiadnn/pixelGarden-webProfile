@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Garden | Aini's Portfolio</title>
+  <link rel="stylesheet" href="./style/output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="./js/main.js" defer></script>
+
+
+</head>
+
+<!-- Menu dan sidebar menu -->
+<body class="bg-softCream text-darkSoil dark:bg-darkSoil dark:text-softCream font-pixel">
+  <!-- 🌙 Toggle Dark Mode -->
+  <div class="fixed top-6 right-4 z-50">
+    <button id="toggleDark" class="bg-gardenGreen text-darkSoil px-4 py-2 rounded shadow hover:bg-gardenPink transition hover:scale-105">
+      mode🌙
+    </button>
+  </div>
+
+    <div class="fixed top-6 left-4 z-50 ">
+    <button id="toggleMenu" class="bg-gardenGreen text-darkSoil px-4 py-2 rounded shadow hover:bg-gardenPink transition hover:scale-105">
+        <img src="./assets/pixel-icons/iconMenu.png"  alt="" class="w-6 h-6">
+
+    </button>
+  </div>
+
+
+<!-- Sidebar -->
+<div id="sidebarMenu" 
+     class="fixed top-3 left-0 bottom-3 w-64  bg-gardenGreen shadow-lg rounded-lg overflow-hidden
+            transform -translate-x-full transition-transform duration-300 z-40 pt-16 ">
+  <div class="p-4 text-darkSoil font-bold text-lg border-b border-darkSoil">
+    Menu
+  </div>
+  <ul class="p-4 space-y-4 text-darkSoil">
+    <li><a href="#home" class="hover:text-gardenPink">Home</a></li>
+    <li><a href="about.html" class="hover:text-gardenPink">About</a></li>
+    <li><a href="certificates.html" class="hover:text-gardenPink">Certificates</a></li>
+    <li><a href="#contact" class="hover:text-gardenPink">Contact</a></li>
+    <li><a href="devDiary.html" class="hover:text-gardenPink">Dev Diary</a></li>
+    <li><a href="" class="hover:text-gardenPink">Resume</a></li>
+    <li><a href="exp.html" class="hover:text-gardenPink">Experiments</a></li>
+  </ul>
+</div>
+
+
+
+
+  <!-- 🌿 Hero Section -->
+<section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+<img 
+  id="ainiPixel"
+  src="./assets/images/aini-pixel.png" 
+  alt="Aini Pixel" 
+  class="w-40 mb-6 drop-shadow-lg transition-transform duration-500 ease-in-out hover:scale-105 hover:brightness-105"
+/>
+<!-- Container pixel pet & bubble (default hidden) -->
+<div id="pixelPetContainer" class="relative flex flex-col items-end justify-start w-full max-w-md mx-auto mt-8 hidden animate-fadein">
+  <!-- Bubble -->
+  <div class="relative bg-white self-start ml-20  dark:bg-[#333] text-darkSoil dark:text-white px-7 py-5 rounded-lg shadow-lg max-w-lg w-fit animate-fadein">
+    <button id="btn-close-pet" class="absolute top-1 left-3 text-lg font-bold hover:text-red-500">×</button>
+    
+    <p id="petMessage" class=" text-sm leading-relaxed">
+      🌱 Did you know? This site was designed at 2 AM with matcha latte.
+    </p>
+
+    <button id="btn-funfact"
+            class="mt-3 px-3 py-1 bg-gardenPink text-darkSoil rounded hover:bg-gardenGreen transition hover:scale-105 text-sm w-fit">
+      Reveal Fun Fact
+    </button>
+
+    <a href="garden.html">
+      <button id="startGame"
+              class="mt-2 px-3 py-1 bg-gardenPink text-darkSoil rounded hover:bg-gardenGreen transition hover:scale-105 text-sm w-fit">
+        Want to play a mini game?
+      </button>
+    </a>
+    
+    <!-- Bubble tail (optional) -->
+    <div class="absolute -bottom-2 left-6 w-4 h-4 bg-white dark:bg-[#333] rotate-45"></div>
+  </div>
+
+  <!-- Pixel Pet -->
+  <img src="./assets/images/pixel-pet.gif"
+       alt="Pixel Pet"
+       class="self-start w-52 mt-4 pb-2" />
+</div>
+
+
+
+
+<div class="text-center mt-1 px-4 md:px-8">
+  <!-- Baris 1 -->
+  <h1 id="line1"
+      class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 
+             overflow-hidden whitespace-normal md:whitespace-nowrap border-darkSoil 
+             text-darkSoil dark:text-softCream
+ inline-block animate-typing">
+    Hi, I’m Aini.
+  </h1>
+
+  <!-- Baris 2 -->
+<h2 id="line2"
+    class="text-xl sm:text-2xl md:text-4xl font-bold mt-2 
+           text-darkSoil dark:text-softCream
+           text-center w-full break-words px-4">
+  <span id="welcome" class="inline border-darkSoil"></span>
+  <span id="pixel" class="text-gardenPink hidden"></span>
+  <span id="cursor" class="inline animate-blink ml-1 font-bold text-darkSoil">_</span>
+</h2>
+</div>
+
+  <div id="hero-buttons" class="flex flex-col gap-4 mt-8 opacity-0  transition-opacity duration-500">
+    <a href="#story" class="px-6 py-2 bg-gardenPink text-darkSoil rounded hover:bg-gardenGreen transition hover:scale-105">How I Started ↓</a>
+    <a href="#journey" class="px-6 py-2 bg-gardenPink text-darkSoil rounded hover:bg-gardenGreen transition hover:scale-105">View My Journey ↓</a>
+    <a href="#project-build" class="px-6 py-2 bg-gardenPink text-darkSoil rounded hover:bg-gardenGreen transition hover:scale-105">Things I've Built ↓</a>
+  </div>
+</section>
+
+
+ <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+
+  <!-- 🌱 How I Started Section -->
+
+  <section id="story" class=" transition-all duration-700 ease-out min-h-screen flex items-center justify-center bg-gardenGreen   text-darkSoil  px-6 py-12 rounded-lg shadow-lg max-w-3xl mx-auto mt-12">
+ <div class="max-w-3xl">
+   <h2 class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out  text-2xl sm:text-3xl font-bold mb-4 ">🌱 How I Started</h2>
+  <p class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out text-base leading-relaxed">
+    I didn’t grow up coding. In fact, I started with zero tech background.
+    But I’ve always loved designing, storytelling, and turning little ideas into something real.
+  </p>
+  <p class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out text-base leading-relaxed mt-4">
+    One day, I stumbled into HTML and CSS — and I was hooked. My first layout was messy, broken, and honestly kind of ugly.
+    But I felt something click. That spark of “I built this” kept me going.
+  </p>
+  <p class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out text-base leading-relaxed mt-4">
+    With every bug I fixed, every button I styled, every midnight experiment — I felt like I was planting something.
+    And that’s how my little garden of code began.
+  </p>
+ </div>
+</section>
+
+
+
+ <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+
+<!-- 🌿 My Journey (Zigzag Timeline with Flip on Click) -->
+<section id="journey" class="px-4 py-24 bg-softCream dark:bg-darkSoil">
+  <h2 class="text-center text-4xl font-bold text-gardenGreen mb-4">🌿 My Journey</h2>
+  <p class="text-center text-sm text-gray-500 dark:text-gray-300 mb-16">Tap to reveal 🍃</p>
+
+  <div class="relative  max-w-5xl mx-auto  flex flex-col gap-24">
+
+    <!-- Card 1 -->
+    <div class=" relative reveal ml-6 " data-side="left">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">🌱</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">Planted the First Seeds</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Learned HTML, CSS, and JavaScript basics with my brother’s help — first sprouts in my coding garden.
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Card 2 -->
+    <div class=" relative reveal mr-6 self-end" data-side="right">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">🧩</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">Growing through Courses</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Took online courses, deepened JS skills, and built my first Ghibli landing page.
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Card 3 -->
+    <div class=" relative reveal ml-6" data-side="left">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">⚛️</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">Exploring React</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Tried simple React apps. I thought I’d go into React Native, but later chose a different path.
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Card 4 -->
+    <div class="relative reveal mr-6 self-end" data-side="right">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">🍄</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">Nurturing Roots in University</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Learned Pascal, Python basics, VB6, and made simple desktop apps. Built databases using MySQL & phpMyAdmin.
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Card 5 -->
+    <div class="relative reveal ml-6" data-side="left">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">🪴</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">A Pause for Growth</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Focused on university and took a break from web development. Realized I missed building digital spaces.
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Card 6 -->
+    <div class="relative reveal mr-6 self-end" data-side="right">
+      <div onclick="flipCard(this)" class="transition hover:scale-105 h-64 flip-card cursor-pointer w-full sm:w-[28rem]">
+        <div class="flip-inner">
+          <div class="flip-front bg-white dark:bg-[#2a2a2a] p-6 rounded shadow flex flex-col items-center justify-center">
+            <span class="text-4xl">🌸</span>
+            <h3 class="text-xl font-bold text-center text-gardenPink mt-2">Blooming My Garden Back</h3>
+          </div>
+          <div class="flip-back bg-gardenGreen text-darkSoil dark:bg-[#444] dark:text-white p-6 rounded shadow text-center">
+            <p class="text-base leading-relaxed">
+              Now focusing on front-end dev with JavaScript and exploring databases deeper. The garden is mine now.
+            </p>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+
+  </div>
+
+  <!-- Button to Tools Page -->
+  <div class="mt-20 text-center">
+    <a href="tools.html" class="inline-block px-6 py-2 bg-gardenGreen text-darkSoil font-semibold rounded hover:bg-gardenPink transition hover:scale-105">
+      🛠 Tools I've Used in My Garden →
+    </a>
+  </div>
+</section>
+
+
+
+ <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+
+<!-- What I Built -->
+<section id="project-build" class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out min-h-screen bg-[#FFF7F0] dark:bg-[#1a1a1a] px-10 py-20">
+  <div class="relative w-full max-w-5xl mx-auto">
+
+    <!-- Tombol Prev -->
+    <button id="prevBtn"
+      class="absolute left-0 top-1/2 -translate-y-1/2 bg-gardenPink text-darkSoil px-3 py-2 rounded shadow hover:scale-105 z-10"
+      aria-label="Previous slide">
+      &lsaquo;
+    </button>
+
+    <h2 class="text-center text-3xl mb-10">Things I've Built</h2>
+
+    <!-- Container Slider -->
+    <div class="relative w-full max-w-5xl mx-auto overflow-hidden">
+      <div id="cardTrack" class="flex transition-transform duration-500 ease-in-out">
+
+        <!-- Slide 1 -->
+        <div class="flex gap-6 min-w-full px-4">
+          <!-- Card 1 -->
+          <div class="bg-white dark:bg-[#2a2a2a] p-4 rounded shadow w-1/2">
+            <h3 class="font-semibold mb-2">Whisper Of Ghibli — Web Profil Studio Ghibli</h3>
+            <a href="https://aboutghibliproject.netlify.app/" target="_blank" rel="noopener noreferrer" class="block">
+              <img src="./assets/images/studioGhibli.png" alt="Studio Ghibli Preview"
+                   class="w-full h-auto my-6 shadow hover:scale-105 transition" loading="lazy">
+            </a>
+      <p>Website ini adalah proyek statis sederhana yang bertujuan untuk memperkenalkan sejarah, karya, dan industri di balik Studio Ghibli, salah satu studio animasi legendaris asal Jepang. Dibuat menggunakan HTML, CSS, dan JavaScript, halaman ini menampilkan informasi singkat dan visual menarik yang responsif dan ringan untuk diakses dari berbagai perangkat.</p>
+            <a href="https://github.com/ainiadn/About-Ghibli/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="underline">
+              Source Code
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white dark:bg-[#2a2a2a] p-4 rounded shadow w-1/2">
+            <h3 class="font-semibold mb-2">Personal-Notes-App</h3>
+            <a href="https://personalnotesapps.netlify.app/" target="_blank" rel="noopener noreferrer" class="block">
+              <img src="assets/images/personalNotes.png" alt="Personal Notes App Preview"
+                   class="w-full h-auto my-6 shadow hover:scale-105 transition" loading="lazy">
+            </a>
+            <p class="text-sm leading-relaxed mb-3">
+      <p>Aplikasi ini dirancang untuk mencatat informasi pribadi secara cepat dan aman di browser pengguna. Dibangun dengan HTML, CSS, dan JavaScript murni, aplikasi ini menyimpan data menggunakan localStorage, sehingga pengguna tetap dapat mengakses catatan mereka meskipun halaman direfresh atau ditutup.</p>
+            <a href="https://github.com/ainiadn/Personal-Notes-App/tree/main/personal-notes-Apps" target="_blank" rel="noopener noreferrer" class="underline">
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="flex gap-6 min-w-full px-4">
+          <!-- Card 3 -->
+          <div class="bg-white dark:bg-[#2a2a2a] p-4 rounded shadow w-1/2">
+            <h3 class="font-semibold mb-2">Matcha Notes App — React + Vite</h3>
+            <a href="https://notesappai.netlify.app/" target="_blank" rel="noopener noreferrer" class="block">
+              <img src="assets/images/matchaNotes.png" alt="Matcha Notes App Preview"
+                   class="w-full h-auto my-6 shadow hover:scale-105 transition" loading="lazy">
+            </a>
+      <p>Matcha Notes adalah aplikasi pencatatan sederhana yang memungkinkan pengguna membuat, menyimpan, dan menghapus catatan langsung di browser. Dibuat menggunakan React dan Vite, aplikasi ini memiliki antarmuka minimalis dan responsif, serta memanfaatkan localStorage untuk menyimpan data secara lokal tanpa database eksternal.</p>
+            <div class="flex gap-4">
+              <a href="https://notesappai.netlify.app/" target="_blank" rel="noopener noreferrer" class="underline">Lihat Website</a>
+              <a href="https://github.com/ainiadn/notes-App/tree/main/notes-app" target="_blank" rel="noopener noreferrer" class="underline">Source Code</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white dark:bg-[#2a2a2a] p-4 rounded shadow w-1/2">
+            <h3 class="font-semibold mb-2">Bookshelf App — Rak Buku Digital</h3>
+            <a href="https://bookshelfprojectbyai.netlify.app/" target="_blank" rel="noopener noreferrer" class="block">
+              <img src="assets/images/bookshelf-preview.png" alt="Bookshelf App Preview"
+                   class="w-full h-auto my-6 shadow hover:scale-105 transition" loading="lazy">
+            </a>
+            <p class="text-sm leading-relaxed mb-3">
+      <p>Bookshelf App adalah aplikasi pengelolaan daftar bacaan yang dibangun menggunakan JavaScript DOM, HTML, dan CSS. Proyek ini merupakan implementasi konsep CRUD (Create, Read, Update, Delete) dan menggunakan localStorage sebagai media penyimpanan data lokal tanpa koneksi ke server. Pengguna dapat menandai buku sebagai sudah dibaca, menghapus, atau memindahkan buku sesuai kebutuhan.</p>
+            <div class="flex gap-4">
+              <a href="https://bookshelfprojectbyai.netlify.app/" target="_blank" rel="noopener noreferrer" class="underline">Lihat Website</a>
+              <a href="https://github.com/ainiadn/bookshelf-App/tree/main/bookshelf-apps" target="_blank" rel="noopener noreferrer" class="underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="flex gap-6 min-w-full px-4">
+          <!-- Card 5 -->
+          <div class="bg-white dark:bg-[#2a2a2a] p-4 rounded shadow w-1/2">
+            <h3 class="font-semibold mb-2">Growth Tracker App</h3>
+            <a href="https://growth-trackerapp.netlify.app/" target="_blank" rel="noopener noreferrer" class="block">
+              <img src="assets/images/growthTracker.png" alt="Growth Tracker App Preview"
+                   class="w-full h-auto my-6 shadow hover:scale-105 transition" loading="lazy">
+            </a>
+      <p>Growth Tracker App adalah aplikasi pelacak perkembangan diri yang dibangun menggunakan HTML, CSS, dan JavaScript DOM. Aplikasi ini memungkinkan pengguna mencatat aktivitas harian, menetapkan tujuan, serta menandai progres secara visual. Data disimpan menggunakan localStorage, sehingga pengguna dapat menyimpan dan mengelola data tanpa koneksi internet. Desainnya minimalis dan user-friendly, cocok untuk kebutuhan personal tracking secara praktis dan mandiri.</p>
+            <div class="flex gap-4">
+              <a href="https://growth-trackerapp.netlify.app/" target="_blank" rel="noopener noreferrer" class="underline">Lihat Website</a>
+              <a href="https://github.com/ainiadn/growth-tracker" target="_blank" rel="noopener noreferrer" class="underline">Source Code</a>
+            </div>
+          </div>
+
+          <div class="w-1/2"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tombol Next -->
+    <button id="nextBtn"
+      class="absolute right-0 top-1/2 -translate-y-1/2 bg-gardenPink text-darkSoil px-3 py-2 rounded shadow hover:scale-105 z-10"
+      aria-label="Next slide">
+      &rsaquo;
+    </button>
+
+  </div>
+</section>
+
+ <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+
+  <!-- 🌻 What’s Next? -->
+  <section class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out min-h-screen px-6 py-20">
+    <h2 class="text-center text-3xl mb-6">What’s Next?</h2>
+    <p class="text-center max-w-xl mx-auto mb-6">
+      Aku ingin belajar lebih lanjut tentang AI, DevOps, dan Backend Development. Aku suka eksplor dan membangun hal baru 🌱
+    </p>
+    <div class="text-center">
+      <form class="flex flex-col gap-4 max-w-md mx-auto">
+        <input type="text" placeholder="Your name" class="p-2 border rounded" />
+        <input type="email" placeholder="Your email" class="p-2 border rounded" />
+        <textarea placeholder="Let's build something!" class="p-2 border rounded"></textarea>
+        <button class="bg-gardenPink px-4 py-2 rounded hover:bg-gardenGreen transition hover:scale-105" >Send</button>
+      </form>
+    </div>
+  </section>
+
+  
+
+
+  <!-- 🌸 Footer -->
+  <footer id="contact" class="bg-darkSoil text-softCream text-center py-6">
+    <p class="mb-2">Made with 🌸 by Aini</p>
+    <div class="flex justify-center gap-4">
+      <a href="#"><img src="./assets/pixel-icons/github.png" alt="GitHub" class="w-6" /></a>
+      <a href="#"><img src="./assets/pixel-icons/linkedin.png" alt="LinkedIn" class="w-6" /></a>
+    </div>
+  </footer>
+
+
+
+<!-- Tombol Scroll to Top -->
+<button id="to-top" 
+  class="hidden fixed bottom-6 right-6 z-50 bg-gardenGreen text-darkSoil px-4 py-2 rounded shadow-lg hover:bg-gardenPink transition-all duration-300 hover:scale-105">
+  ↑ Top
+</button>
+
+
+
+</body>
+
+</html>
